@@ -59,10 +59,10 @@
 1. 克隆此專案到您的工作區：
    ```bash
    cd ~/catkin_ws
-   catkin_make
    cd src 
    git clone https://github.com/rayyichen310/-final-project.git Sweeping-Robot-main
-   cd Sweeping-Robot-main
+   cd ..
+   catkin_make
 
 
 ## 參考
