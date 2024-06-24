@@ -8,10 +8,12 @@
 
 ## 系統設計
 ### 自動建圖
-![image](https://github.com/rayyichen310/-final-project/assets/173726579/d271c21a-2293-4f55-9810-ffb5d42d6202)
+![image](https://github.com/rayyichen310/-final-project/assets/173726579/646e153f-5165-44c4-a70b-c9b5e23c5cba)
+
 
 ### 自動清掃
-![image](https://github.com/rayyichen310/-final-project/assets/173726579/eeb3f68c-44d2-4e4a-be43-947339181f0d)
+![image](https://github.com/rayyichen310/-final-project/assets/173726579/7d7946f2-4431-484b-8f9d-ac9aa6aa40fb)
+
 
 主要模組和文件夾包含以下內容：
 
