@@ -42,16 +42,17 @@
    - 指令：`roslaunch auto_nav auto_slam.launch`
    - ![image](https://github.com/rayyichen310/-final-project/assets/173726579/443390b1-6591-4f50-8ae0-763408622925)
 
-   - 測試結果：能順利掃描完整個地圖。
+   
 
 2. **保存地圖**：
    - 指令：`roslaunch auto_nav save_map.launch`
-   - 測試結果：地圖保存成功。
+  
 
 3. **自動清掃**：
    - 指令：`roslaunch auto_nav clean_work.launch`
    - ![image](https://github.com/rayyichen310/-final-project/assets/173726579/72ef3836-5306-4fe0-af04-c4f52880f0f9)
-   - 測試結果：能正確運作清掃房間，但偶爾機器人在清掃80%左右的地圖後，會卡在某個點不再前進。
+   - 測試結果：能正確運作清掃房間，但偶爾機器人在清掃80%左右的地圖後，會卡在某個點不再前進
+   - 對邊緣的處理不夠好
 
 ## 使用說明
 
