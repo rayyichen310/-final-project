@@ -67,8 +67,11 @@
 
 ## 參考
 - https://github.com/hrnr/m-explore
+- https://github.com/nobleo/full_coverage_path_planner
+- https://github.com/hjr553199215/SLAM-Clean-Robot-Path-Coverage-in-ROS
 - https://github.com/peterWon/CleaningRobot
 - https://github.com/mywisdomfly/Clean-robot-turtlebot3
 - https://github.com/gezongbo/Wander_bot
+- https://github.com/li-haojia/Clean-robot-turtlebot3?tab=readme-ov-file
 
 
