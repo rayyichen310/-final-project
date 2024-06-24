@@ -1,0 +1,26 @@
+# Robot geometric parameters. If the robot is circular, set robot_radius. If it has a different shape, set footprint.
+robot_radius: 0.12 # Circular shape
+# footprint: [[-0.12, -0.12], [-0.12, 0.12], [0.12, 0.12], [0.12, -0.12]]
+
+obstacle_range: 3.0 # Used for obstacle detection. For example, a value of 3.0 means that obstacles within 3 meters will be considered in the costmap.
+raytrace_range: 3.5 # Used for clearing obstacles. For example, a value of 3.5 means that obstacles beyond 3.5 meters will be cleared from the costmap.
+
+# Inflation radius extends the cost area beyond the collision zone to help the robot avoid obstacles.
+inflation_radius: 0.2
+# Cost scaling factor. A higher value means lower cost values.
+cost_scaling_factor: 3.0
+
+# Map type
+map_type: costmap
+# Sensors required for the navigation package
+observation_sources: scan
+# Configure the coordinate frame and data for the sensor. This is also used to add and clear obstacles in the costmap.
+# For example, you can use a laser scanner to add obstacles to the costmap and a Kinect to navigate and clear obstacles.
+scan: {sensor_frame: laser, data_type: LaserScan, topic: scan, marking: true, clearing: true}
+
+max_obstacle_height: 0.6
+min_obstacle_height: 0.0
+
+# If set to false, the obstacle layer considers unknown space to be free.
+obstacle_layer:
+   track_unknown_space: true
