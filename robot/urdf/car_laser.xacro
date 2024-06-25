@@ -1,13 +1,13 @@
 <robot name="car_laser" xmlns:xacro="http://wiki.ros.org/xacro">
 
-    <!-- 雷达支架 -->
-    <xacro:property name="support_length" value="0.025" /> <!-- 支架长度 -->
-    <xacro:property name="support_radius" value="0.01" /> <!-- 支架半径 -->
-    <xacro:property name="support_x" value="0.0" /> <!-- 支架安装的x坐标 -->
-    <xacro:property name="support_y" value="0.0" /> <!-- 支架安装的y坐标 -->
-    <xacro:property name="support_z" value="${base_link_length / 2 + support_length / 2}" /> <!-- 支架安装的z坐标:底盘高度 / 2 + 支架高度 / 2  -->
+    <!-- Lidar support properties -->
+    <xacro:property name="support_length" value="0.025" /> <!-- Support length -->
+    <xacro:property name="support_radius" value="0.01" />  <!-- Support radius -->
+    <xacro:property name="support_x" value="0.0" />        <!-- Support mounting x coordinate -->
+    <xacro:property name="support_y" value="0.0" />        <!-- Support mounting y coordinate -->
+    <xacro:property name="support_z" value="${base_link_length / 2 + support_length / 2}" /> <!-- Support mounting z coordinate: chassis height / 2 + support height / 2 -->
 
-    <xacro:property name="support_m" value="0.02" /> <!-- 支架质量 -->
+    <xacro:property name="support_m" value="0.02" />       <!-- Support mass -->
 
     <link name="support">
         <visual>
@@ -28,7 +28,6 @@
         </collision>
 
         <xacro:cylinder_inertial_matrix m="${support_m}" r="${support_radius}" h="${support_length}" />
-
     </link>
 
     <joint name="support2base_link" type="fixed">
@@ -41,16 +40,16 @@
         <material>Gazebo/White</material>
     </gazebo>
 
-    <!-- 雷达属性 -->
-    <xacro:property name="laser_length" value="0.05" /> <!-- 雷达长度 -->
-    <xacro:property name="laser_radius" value="0.03" /> <!-- 雷达半径 -->
-    <xacro:property name="laser_x" value="0.0" /> <!-- 雷达安装的x坐标 -->
-    <xacro:property name="laser_y" value="0.0" /> <!-- 雷达安装的y坐标 -->
-    <xacro:property name="laser_z" value="${support_length / 2 + laser_length / 2}" /> <!-- 雷达安装的z坐标:支架高度 / 2 + 雷达高度 / 2  -->
+    <!-- Lidar properties -->
+    <xacro:property name="laser_length" value="0.05" /> <!-- Lidar length -->
+    <xacro:property name="laser_radius" value="0.03" /> <!-- Lidar radius -->
+    <xacro:property name="laser_x" value="0.0" />       <!-- Lidar mounting x coordinate -->
+    <xacro:property name="laser_y" value="0.0" />       <!-- Lidar mounting y coordinate -->
+    <xacro:property name="laser_z" value="${support_length / 2 + laser_length / 2}" /> <!-- Lidar mounting z coordinate: support height / 2 + lidar height / 2 -->
 
-    <xacro:property name="laser_m" value="0.1" /> <!-- 雷达质量 -->
+    <xacro:property name="laser_m" value="0.1" />       <!-- Lidar mass -->
 
-    <!-- 雷达关节以及link -->
+    <!-- Lidar joint and link -->
     <link name="laser">
         <visual>
             <geometry>
@@ -77,8 +76,7 @@
         <material>Gazebo/Black</material>
     </gazebo>
 
-
-    <!-- 雷达插件 -->
+    <!-- Lidar plugin -->
     <gazebo reference="laser">
         <sensor type="ray" name="rplidar">
             <pose>0 0 0 0 0 0</pose>
