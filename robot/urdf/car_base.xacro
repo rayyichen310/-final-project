@@ -1,18 +1,18 @@
 <robot name="car_base" xmlns:xacro="http://www.ros.org/wiki/xacro">
-    <!-- 封装变量、常量 -->
+    <!-- 封装變量、常量 -->
     <xacro:property name="PI" value="3.1415926"/>
-    <!-- 宏:黑色设置 -->
+    <!-- macro:黑色 -->
     <material name="black">
         <color rgba="0.0 0.0 0.0 1.0" />
     </material>
-    <!-- 底盘属性 -->
-    <xacro:property name="base_footprint_radius" value="0.001" /> <!-- base_footprint 半径  -->
-    <xacro:property name="base_link_radius" value="0.1" />        <!-- base_link 半径 -->
-    <xacro:property name="base_link_length" value="0.08" />       <!-- base_link 长 -->
-    <xacro:property name="earth_space" value="0.015" />           <!-- 离地间距 -->
-    <xacro:property name="base_link_m" value="0.5" />             <!-- 质量  -->
+    <!-- 底盤属性 -->
+    <xacro:property name="base_footprint_radius" value="0.001" /> <!-- base_footprint radis  -->
+    <xacro:property name="base_link_radius" value="0.1" />        <!-- base_link rad -->
+    <xacro:property name="base_link_length" value="0.08" />       <!-- base_link 長 -->
+    <xacro:property name="earth_space" value="0.015" />           <!-- 離地高度 -->
+    <xacro:property name="base_link_m" value="0.5" />             <!-- weight  -->
 
-    <!-- 底盘 -->
+    <!-- 底盤 -->
     <link name="base_footprint">
         <visual>
             <geometry>
@@ -50,13 +50,13 @@
         <material>Gazebo/Yellow</material>
     </gazebo>
 
-    <!-- 驱动轮 -->
-    <!-- 驱动轮属性 -->
-    <xacro:property name="wheel_radius" value="0.0325" /><!-- 半径 -->
-    <xacro:property name="wheel_length" value="0.015" /><!-- 宽度 -->
-    <xacro:property name="wheel_m" value="0.05" /> <!-- 质量  -->
+    <!-- 驅動倫 -->
+    <!-- 驅動倫属性 -->
+    <xacro:property name="wheel_radius" value="0.0325" /><!-- rad -->
+    <xacro:property name="wheel_length" value="0.015" /><!-- 寬 -->
+    <xacro:property name="wheel_m" value="0.05" /> <!-- weight  -->
 
-    <!-- 驱动轮宏实现 -->
+    <!-- 驅動倫macro -->
     <xacro:macro name="add_wheels" params="name flag">
         <link name="${name}_wheel">
             <visual>
@@ -89,12 +89,12 @@
     </xacro:macro>
     <xacro:add_wheels name="left" flag="1" />
     <xacro:add_wheels name="right" flag="-1" />
-    <!-- 支撑轮 -->
-    <!-- 支撑轮属性 -->
-    <xacro:property name="support_wheel_radius" value="0.0075" /> <!-- 支撑轮半径 -->
-    <xacro:property name="support_wheel_m" value="0.03" /> <!-- 质量  -->
+    <!-- 輔助輪 -->
+    <!-- 輔助輪属性 -->
+    <xacro:property name="support_wheel_radius" value="0.0075" /> <!-- 輔助輪radis -->
+    <xacro:property name="support_wheel_m" value="0.03" /> <!-- weight  -->
 
-    <!-- 支撑轮宏 -->
+    <!-- macro -->
     <xacro:macro name="add_support_wheel" params="name flag" >
         <link name="${name}_wheel">
             <visual>
