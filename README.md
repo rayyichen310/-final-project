@@ -73,5 +73,9 @@
 - https://github.com/hjr553199215/SLAM-Clean-Robot-Path-Coverage-in-ROS
 - https://github.com/mywisdomfly/Clean-robot-turtlebot3
 
+- `roslaunch auto_nav auto_slam.launch` 掃描
+- `roslaunch auto_nav save_map.launch`  儲存地圖
+- `roslaunch auto_nav clean_work.launch` 自動清掃
+
 
 
