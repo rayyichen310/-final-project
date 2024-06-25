@@ -7,5 +7,6 @@ global_costmap:
   publish_frequency: 1.0    # Costmap publish frequency
   transform_tolerance: 0.5  # Timeout for waiting for coordinate transform publication
 
-  static_map: true # Whether to use a map or map server to initialize the global costmap. If not using a static map, set this to false.
+  static_map: true # 是否使用static map或map server來初始化global costmap
+
 
