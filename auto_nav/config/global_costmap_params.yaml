@@ -9,4 +9,3 @@ global_costmap:
 
   static_map: true # 是否使用static map或map server來初始化global costmap
 
-
