@@ -1,6 +1,6 @@
 <!-- 组合底盤、攝影機和雷達 -->
 <robot name="my_car_camera" xmlns:xacro="http://wiki.ros.org/xacro">
-    <!-- 包含惯性矩陣計算的head文件 -->
+    <!-- 包含慣性矩陣計算的head文件 -->
     <xacro:include filename="head.xacro" />
 
     <!-- part of robot -->
