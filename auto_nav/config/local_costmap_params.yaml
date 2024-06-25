@@ -6,9 +6,10 @@ local_costmap:
   publish_frequency: 10.0 # Costmap publish frequency
   transform_tolerance: 0.5 # Timeout for waiting for coordinate transform publication
 
-  static_map: false  # Static map not required, can improve navigation performance
-  rolling_window: true # Whether to use a dynamic window; default is false. In a static global map, the map does not change
-  width: 3 # Local map width in meters
-  height: 3 # Local map height in meters
-  resolution: 0.05 # Local map resolution in meters, generally consistent with the static map resolution
+  static_map: false  # 不需要static map，可以提高導航性能
+  rolling_window: true # 是否使用rolling window；默認為false。在靜態global map中，地圖不會改變
+  width: 3 # 局部地圖的寬度（m）
+  height: 3 # 局部地圖的高度（m）
+  resolution: 0.05 # 局部地圖的解析度（m），通常與static map解析度一樣
+
 
