@@ -44,11 +44,12 @@
 
    
 
-2. **保存地圖**：
+2. **保存地圖**
+   - 開啟另一個terminal(自動建圖不要關閉)
    - 指令：`roslaunch auto_nav save_map.launch`
   
 
-3. **自動清掃**：
+4關閉建圖terminal
    - 指令：`roslaunch auto_nav clean_work.launch`
    - ![image](https://github.com/rayyichen310/-final-project/assets/173726579/72ef3836-5306-4fe0-af04-c4f52880f0f9)
    - 測試結果：能正確運作清掃房間，但偶爾機器人在清掃80%左右的地圖後，會卡在某個點不再前進
