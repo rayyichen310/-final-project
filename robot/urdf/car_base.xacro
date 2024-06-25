@@ -1,18 +1,18 @@
 <robot name="car_base" xmlns:xacro="http://www.ros.org/wiki/xacro">
-    <!-- 封装變量、常量 -->
+    <!-- Encapsulating variables and constants -->
     <xacro:property name="PI" value="3.1415926"/>
-    <!-- macro:黑色 -->
+    <!-- Macro: black material -->
     <material name="black">
         <color rgba="0.0 0.0 0.0 1.0" />
     </material>
-    <!-- 底盤属性 -->
-    <xacro:property name="base_footprint_radius" value="0.001" /> <!-- base_footprint radis  -->
-    <xacro:property name="base_link_radius" value="0.1" />        <!-- base_link rad -->
-    <xacro:property name="base_link_length" value="0.08" />       <!-- base_link 長 -->
-    <xacro:property name="earth_space" value="0.015" />           <!-- 離地高度 -->
-    <xacro:property name="base_link_m" value="0.5" />             <!-- weight  -->
+    <!-- Chassis properties -->
+    <xacro:property name="base_footprint_radius" value="0.001" /> <!-- Base footprint radius -->
+    <xacro:property name="base_link_radius" value="0.1" />        <!-- Base link radius -->
+    <xacro:property name="base_link_length" value="0.08" />       <!-- Base link length -->
+    <xacro:property name="earth_space" value="0.015" />           <!-- Ground clearance -->
+    <xacro:property name="base_link_m" value="0.5" />             <!-- Weight -->
 
-    <!-- 底盤 -->
+    <!-- Chassis -->
     <link name="base_footprint">
         <visual>
             <geometry>
@@ -40,23 +40,22 @@
         <xacro:cylinder_inertial_matrix m="${base_link_m}" r="${base_link_radius}" h="${base_link_length}" />
     </link>
 
-
     <joint name="base_link2base_footprint" type="fixed">
         <parent link="base_footprint" />
         <child link="base_link" />
-        <origin xyz="0 0 ${earth_space + base_link_length / 2 }" />
+        <origin xyz="0 0 ${earth_space + base_link_length / 2}" />
     </joint>
     <gazebo reference="base_link">
         <material>Gazebo/Yellow</material>
     </gazebo>
 
-    <!-- 驅動倫 -->
-    <!-- 驅動倫属性 -->
-    <xacro:property name="wheel_radius" value="0.0325" /><!-- rad -->
-    <xacro:property name="wheel_length" value="0.015" /><!-- 寬 -->
-    <xacro:property name="wheel_m" value="0.05" /> <!-- weight  -->
+    <!-- Drive wheels -->
+    <!-- Drive wheel properties -->
+    <xacro:property name="wheel_radius" value="0.0325" /> <!-- Radius -->
+    <xacro:property name="wheel_length" value="0.015" />  <!-- Width -->
+    <xacro:property name="wheel_m" value="0.05" />       <!-- Weight -->
 
-    <!-- 驅動倫macro -->
+    <!-- Drive wheel macro -->
     <xacro:macro name="add_wheels" params="name flag">
         <link name="${name}_wheel">
             <visual>
@@ -75,27 +74,27 @@
             <xacro:cylinder_inertial_matrix m="${wheel_m}" r="${wheel_radius}" h="${wheel_length}" />
         </link>
 
-      <joint name="${name}_wheel2base_link" type="continuous">
-          <parent link="base_link" />
-          <child link="${name}_wheel" />
-          <origin xyz="0 ${flag * base_link_radius} ${-(earth_space + base_link_length / 2 - wheel_radius) }" />
-          <axis xyz="0 1 0" />
-      </joint>
+        <joint name="${name}_wheel2base_link" type="continuous">
+            <parent link="base_link" />
+            <child link="${name}_wheel" />
+            <origin xyz="0 ${flag * base_link_radius} ${-(earth_space + base_link_length / 2 - wheel_radius)}" />
+            <axis xyz="0 1 0" />
+        </joint>
 
-      <gazebo reference="${name}_wheel">
-          <material>Gazebo/Red</material>
-      </gazebo>
-
+        <gazebo reference="${name}_wheel">
+            <material>Gazebo/Red</material>
+        </gazebo>
     </xacro:macro>
     <xacro:add_wheels name="left" flag="1" />
     <xacro:add_wheels name="right" flag="-1" />
-    <!-- 輔助輪 -->
-    <!-- 輔助輪属性 -->
-    <xacro:property name="support_wheel_radius" value="0.0075" /> <!-- 輔助輪radis -->
-    <xacro:property name="support_wheel_m" value="0.03" /> <!-- weight  -->
 
-    <!-- macro -->
-    <xacro:macro name="add_support_wheel" params="name flag" >
+    <!-- Support wheels -->
+    <!-- Support wheel properties -->
+    <xacro:property name="support_wheel_radius" value="0.0075" /> <!-- Support wheel radius -->
+    <xacro:property name="support_wheel_m" value="0.03" />       <!-- Weight -->
+
+    <!-- Support wheel macro -->
+    <xacro:macro name="add_support_wheel" params="name flag">
         <link name="${name}_wheel">
             <visual>
                 <geometry>
@@ -126,7 +125,5 @@
 
     <xacro:add_support_wheel name="front" flag="1" />
     <xacro:add_support_wheel name="back" flag="-1" />
-
-
 </robot>
 
