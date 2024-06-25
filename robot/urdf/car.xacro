@@ -1,13 +1,14 @@
-<!-- 组合底盤、攝影機和雷達 -->
+<!-- Combining chassis, camera, and radar -->
 <robot name="my_car_camera" xmlns:xacro="http://wiki.ros.org/xacro">
-    <!-- 包含慣性矩陣計算的head文件 -->
+    <!-- Include head file with inertia matrix calculation -->
     <xacro:include filename="head.xacro" />
 
-    <!-- part of robot -->
+    <!-- Parts of the robot -->
     <xacro:include filename="car_base.xacro" />
     <xacro:include filename="car_camera.xacro" />
     <xacro:include filename="car_laser.xacro" />
 
-    <!-- 運動控制 -->
+    <!-- Motion control -->
     <xacro:include filename="car_move.xacro" />
 </robot>
+
