@@ -1,15 +1,15 @@
 <robot name="car_camera" xmlns:xacro="http://wiki.ros.org/xacro">
-    <!-- 摄像头属性 -->
-    <xacro:property name="camera_length" value="0.01" />  <!-- 摄像头长度(x) -->
-    <xacro:property name="camera_width" value="0.025" />  <!-- 摄像头宽度(y) -->
-    <xacro:property name="camera_height" value="0.025" /> <!-- 摄像头高度(z) -->
-    <xacro:property name="camera_x" value="0.08" />       <!-- 摄像头安装的x坐标 -->
-    <xacro:property name="camera_y" value="0.0" />        <!-- 摄像头安装的y坐标 -->
-    <xacro:property name="camera_z" value="${base_link_length / 2 + camera_height / 2}" /> <!-- 摄像头安装的z坐标:底盘高度 / 2 + 摄像头高度 / 2  -->
+    <!-- Camera properties -->
+    <xacro:property name="camera_length" value="0.01" />  <!-- Camera length (x) -->
+    <xacro:property name="camera_width" value="0.025" />  <!-- Camera width (y) -->
+    <xacro:property name="camera_height" value="0.025" /> <!-- Camera height (z) -->
+    <xacro:property name="camera_x" value="0.08" />       <!-- Camera mounting x coordinate -->
+    <xacro:property name="camera_y" value="0.0" />        <!-- Camera mounting y coordinate -->
+    <xacro:property name="camera_z" value="${base_link_length / 2 + camera_height / 2}" /> <!-- Camera mounting z coordinate: chassis height / 2 + camera height / 2 -->
 
-    <xacro:property name="camera_m" value="0.01" />       <!-- 摄像头质量 -->
+    <xacro:property name="camera_m" value="0.01" />       <!-- Camera mass -->
 
-    <!-- 摄像头关节以及link -->
+    <!-- Camera joint and link -->
     <link name="camera">
         <visual>
             <geometry>
@@ -36,12 +36,11 @@
         <material>Gazebo/Blue</material>
     </gazebo>
 
-
-    <!-- 单目相机插件 -->
+    <!-- Monocular camera plugin -->
     <gazebo reference="camera">
         <sensor type="camera" name="camera_node">
-            <update_rate>30.0</update_rate> <!-- 更新频率 -->
-            <!-- 摄像头基本信息设置 -->
+            <update_rate>30.0</update_rate> <!-- Update rate -->
+            <!-- Camera basic settings -->
             <camera name="head">
                 <horizontal_fov>1.3962634</horizontal_fov>
                 <image>
@@ -59,7 +58,7 @@
                     <stddev>0.007</stddev>
                 </noise>
             </camera>
-            <!-- 核心插件 -->
+            <!-- Core plugin -->
             <plugin name="gazebo_camera" filename="libgazebo_ros_camera.so">
                 <alwaysOn>true</alwaysOn>
                 <updateRate>0.0</updateRate>
