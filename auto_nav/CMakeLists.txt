@@ -56,6 +56,5 @@ catkin_install_python(PROGRAMS
 ## Testing ##
 #############
 
-## Add folders to be run by python nosetests
-#catkin_add_nosetests(test)
+
 
