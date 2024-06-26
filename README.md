@@ -68,7 +68,7 @@
 
 
 ## changelog
-修改 base_local_planner_params.yaml參數，機器人移動更加精準，大幅降低卡住機率
+- 修改 base_local_planner_params.yaml參數，機器人移動更加精準，大幅降低卡住機率
 
 
 
