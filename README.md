@@ -57,11 +57,20 @@
    - (更新:卡住地點不固定，稍微移動機器人可以解決)
    - (更新:將路徑取消勾選可提升體流暢度)
 
+
+
+![image](https://github.com/rayyichen310/Final-Project-Report-for-Robot-Operating-System/assets/173726579/1967ef87-9e23-4f44-b562-2337f2225d8f)
+
+
+
+
+
+
+
 ## changelog
 修改 base_local_planner_params.yaml參數，機器人移動更加精準，大幅降低卡住機率
 
 
-![image](https://github.com/rayyichen310/Final-Project-Report-for-Robot-Operating-System/assets/173726579/1967ef87-9e23-4f44-b562-2337f2225d8f)
 
 
 ## 使用說明
