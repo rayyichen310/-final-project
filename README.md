@@ -69,6 +69,8 @@
 
 ## changelog
 - 修改 base_local_planner_params.yaml參數，機器人移動更加精準，大幅降低卡住機率
+- ![image](https://github.com/rayyichen310/Final-Project-Report-for-Robot-Operating-System/assets/173726579/2103aaae-f0cd-4367-8c4d-0fdbb78bd579)
+
 
 
 
