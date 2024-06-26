@@ -1,4 +1,4 @@
-image: /root/catkin_ws/src/Sweeping-Robot-main/src/auto_nav/map/testhome_map.pgm
+image:$(find auto_nav)/map/testhome_map.pgm
 resolution: 0.050000
 origin: [-100.000000, -100.000000, 0.000000]
 negate: 0
