@@ -13,16 +13,15 @@ TrajectoryPlannerROS:
   acc_lim_theta: 1.0 # 角速度加速限制
 
 # 目標公差參數
-  xy_goal_tolerance: 0.02 #0.10
-  yaw_goal_tolerance: 0.01 #0.05
+  xy_goal_tolerance: 0 #0.002 #0.10
+  yaw_goal_tolerance: 0 #0.001 #0.05
 
 # 差速驅動機器人配置
 # 是否是全向移動機器人
   holonomic_robot: false
 
 # 前進模擬參數
-  sim_time: 4.2 #0.8
-  vx_samples: 64 #18 
-  vtheta_samples: 80 #20 
+  sim_time: 1.6 #0.8
+  vx_samples: 108 #18 
+  vtheta_samples: 140 #20 
   sim_granularity: 0.05
-
