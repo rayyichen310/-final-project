@@ -21,7 +21,7 @@ TrajectoryPlannerROS:
   holonomic_robot: false
 
 # 前進模擬參數
-  sim_time: 2.5 #0.8
+  sim_time: 3.0 #0.8
   vx_samples: 36 #18 
   vtheta_samples: 40 #20 
   sim_granularity: 0.05
