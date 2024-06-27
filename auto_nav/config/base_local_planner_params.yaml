@@ -10,7 +10,7 @@ TrajectoryPlannerROS:
 
   acc_lim_x: 1.0 # X 加速限制
   acc_lim_y: 0.0 # Y 加速限制
-  acc_lim_theta: 1.4 # 角速度加速限制
+  acc_lim_theta: 1.0 # 角速度加速限制
 
 # 目標公差參數
   xy_goal_tolerance: 0 #0.002 #0.10
@@ -21,7 +21,7 @@ TrajectoryPlannerROS:
   holonomic_robot: false
 
 # 前進模擬參數
-  sim_time: 1.5 #0.8
-  vx_samples: 40 #18 
+  sim_time: 1.6 #0.8
+  vx_samples: 30 #18 
   vtheta_samples: 180 #20 
   sim_granularity: 0.05
